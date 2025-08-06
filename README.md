@@ -14,7 +14,7 @@ Tool for dump DRM resources
 | Marvel's Avengers | [here](https://store.steampowered.com/app/997070) | [here](https://steamdb.info/app/997070)  | ✔️ | ✔️
 | Marvel's Avengers Beta | [here](https://store.steampowered.com/app/1358820) | [here](https://steamdb.info/app/1358820)  | ✔️ | ✔️
 
-Note: For extract Marvel's Avengers TIGER files you need decrypt it first, tool you can get > [here](https://forum.xentax.com/viewtopic.php?p=166510#p166510)
+Note: For extract Marvel's Avengers TIGER files you need decrypt it first!
 
 Credits: [Gh0stBlade](https://github.com/Gh0stBlade)
 
