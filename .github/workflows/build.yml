@@ -1,0 +1,29 @@
+name: Build CDCE Tool
+
+on:
+  push:
+    branches: [ "master", "main" ]
+  pull_request:
+    branches: [ "master", "main" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.1
+
+    - name: Restore NuGet packages
+      run: nuget restore CDCE.TIGER.Tool.sln
+
+    - name: Build Solution
+      run: msbuild CDCE.TIGER.Tool.sln /p:Configuration=Release /p:Platform="Any CPU"
+
+    - name: Upload Dumper Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: CDCE-Dumper-Build
+        path: CDCE.Dumper/bin/Release/
