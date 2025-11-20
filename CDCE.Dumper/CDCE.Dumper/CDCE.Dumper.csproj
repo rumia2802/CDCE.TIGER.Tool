@@ -49,10 +49,12 @@
     <Compile Include="FileSystem\Package\CDRMChunks.cs" />
     <Compile Include="FileSystem\Package\CDRMFile.cs" />
     <Compile Include="FileSystem\Package\DRMFileV23.cs" />
+    <Compile Include="FileSystem\Package\DRMFileV24.cs" />
     <Compile Include="FileSystem\Package\DRMHeader.cs" />
     <Compile Include="FileSystem\Package\DRMFileV22.cs" />
     <Compile Include="FileSystem\Package\DRMResEntry.cs" />
     <Compile Include="FileSystem\Package\DRMResInfo.cs" />
+    <Compile Include="FileSystem\Package\DRMSectionEntry.cs" />
     <Compile Include="FileSystem\Package\DRMUtils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
