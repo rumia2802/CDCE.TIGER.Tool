@@ -1,4 +1,4 @@
-name: Build CDCE Tool
+name: Build CDCE Tool Direct
 
 on:
   push:
@@ -16,14 +16,25 @@ jobs:
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.1
 
-    - name: Restore NuGet packages
-      run: nuget restore CDCE.TIGER.Tool.sln
+    # --- TAHAP 1: Restore & Build DUMPER ---
+    - name: Restore NuGet for Dumper
+      run: nuget restore CDCE.Dumper/CDCE.Dumper/CDCE.Dumper.csproj
 
-    - name: Build Solution
-      run: msbuild CDCE.TIGER.Tool.sln /p:Configuration=Release /p:Platform="Any CPU"
+    - name: Build Dumper
+      run: msbuild CDCE.Dumper/CDCE.Dumper/CDCE.Dumper.csproj /p:Configuration=Release /p:Platform="AnyCPU"
 
-    - name: Upload Dumper Artifact
+    # --- TAHAP 2: Restore & Build UNPACKER ---
+    - name: Restore NuGet for Unpacker
+      run: nuget restore CDCE.Unpacker/CDCE.Unpacker/CDCE.Unpacker.csproj
+
+    - name: Build Unpacker
+      run: msbuild CDCE.Unpacker/CDCE.Unpacker/CDCE.Unpacker.csproj /p:Configuration=Release /p:Platform="AnyCPU"
+
+    # --- TAHAP 3: Kumpulkan Hasilnya ---
+    - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: CDCE-Dumper-Build
-        path: CDCE.Dumper/bin/Release/
+        name: CDCE-Tool-Complete
+        path: |
+          CDCE.Dumper/CDCE.Dumper/bin/Release/CDCE.Dumper.exe
+          CDCE.Unpacker/CDCE.Unpacker/bin/Release/CDCE.Unpacker.exe
