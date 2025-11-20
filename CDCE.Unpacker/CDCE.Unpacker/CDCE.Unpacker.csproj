@@ -49,9 +49,11 @@
     <Compile Include="FileSystem\Package\TigerHash.cs" />
     <Compile Include="FileSystem\Package\TigerHashList.cs" />
     <Compile Include="FileSystem\Package\TigerHeader.cs" />
+    <Compile Include="FileSystem\Package\TigerNFO.cs" />
     <Compile Include="FileSystem\Package\TigerUnpackV8.cs" />
     <Compile Include="FileSystem\Package\TigerUnpackV5.cs" />
     <Compile Include="FileSystem\Package\TigerUnpackV4.cs" />
+    <Compile Include="FileSystem\Package\TigerUnpackV3.cs" />
     <Compile Include="FileSystem\Package\TigerUtils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
