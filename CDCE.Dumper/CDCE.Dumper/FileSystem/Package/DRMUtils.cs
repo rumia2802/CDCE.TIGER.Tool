@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace CDCE.Dumper
@@ -9,7 +9,15 @@ namespace CDCE.Dumper
 
         public static String iGetTigerArchiveByIDV22(UInt16 wTigerID, UInt16 wTigerPart)
         {
-            if (wTigerID == 0 || wTigerID == 1) { return String.Format("bigfile.{0:D3}.tiger", wTigerPart); }
+            // --- MODIFIKASI KHUSUS TR DEFINITIVE EDITION ---
+            // ID 0 diarahkan ke file Priority0_ENGLISH
+            if (wTigerID == 0) 
+            { 
+                return String.Format("Priority0_ENGLISH.{0:D3}.tiger", wTigerPart); 
+            }
+            // ----------------------------------------------
+
+            else if (wTigerID == 1) { return String.Format("bigfile.{0:D3}.tiger", wTigerPart); }
             else if (wTigerID == 4) { return String.Format("DLC\\PACK4.{0:D3}.tiger", wTigerPart); }
             else if (wTigerID == 5) { return String.Format("DLC\\PACK5.{0:D3}.tiger", wTigerPart); }
             else if (wTigerID == 6) { return String.Format("DLC\\PACK6.{0:D3}.tiger", wTigerPart); }
