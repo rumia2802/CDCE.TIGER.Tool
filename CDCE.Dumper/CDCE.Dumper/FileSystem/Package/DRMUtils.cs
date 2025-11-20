@@ -13,7 +13,7 @@ namespace CDCE.Dumper
             // ID 0 diarahkan ke file Priority0_ENGLISH
             if (wTigerID == 0) 
             { 
-                return String.Format("Priority0_ENGLISH.{0:D3}.tiger", wTigerPart); 
+                return String.Format("Priority0.{0:D3}.tiger", wTigerPart); 
             }
             // ----------------------------------------------
 
